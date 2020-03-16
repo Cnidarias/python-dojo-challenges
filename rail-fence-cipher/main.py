@@ -61,14 +61,15 @@ def decrypt(text, key, join=True):
     :param join: Should the result be joined together - if not a list is returned with the elements in order
     :return: The decrypted text either joined together or as a list of elements
     """
-    jumbled_indices = encrypt(list(range(len(text))), key, join=False)
+    jumbled_indices = encrypt(range(len(text)), key, join=False)
     plain_text_list = [c for _, c in sorted(zip(jumbled_indices, text))]
     return "".join(plain_text_list) if join else plain_text_list
 
 
 if __name__ == '__main__':
     test_text = "Hello World!"
-    encrypted = encrypt(test_text, 3)
-    decrypted = decrypt(encrypted, 3)
-    assert decrypted == test_text
-    print(f"{encrypted} == {decrypted}")
+    for i in range(2, 10, 1):
+        encrypted = encrypt(test_text, i)
+        decrypted = decrypt(encrypted, i)
+        assert decrypted == test_text
+        print(f"{i} {encrypted} => {decrypted}")
