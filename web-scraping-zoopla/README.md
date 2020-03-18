@@ -180,7 +180,9 @@ But what we care about is the price for each of those listings
 So lets see how we could identify the price in those listing elements.
 When we look at it again we can see that the price has a class named `text-price`
 
-THat sounds pretty promising so lets go over every listing and check the price. We have to make sure that we actually
+![text_price](./readme_images/testprice.jpg)
+
+That sounds pretty promising so lets go over every listing and check the price. We have to make sure that we actually
 found a price -if not well then lets just `continue` with the next listing
 
 ```python
